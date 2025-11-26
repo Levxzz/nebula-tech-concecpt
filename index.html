@@ -14,7 +14,7 @@
             overflow-x: hidden;
         }
 
-        /* Estrelas no Fundo (REVISADO: Menos poluído e mais sutil) */
+        /* Estrelas no Fundo (REVISADO: MAIS VISÍVEL) */
         .stars {
             position: fixed;
             top: 0;
@@ -26,30 +26,30 @@
         }
         .star {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.08); /* Opacidade BEM baixa */
+            background-color: rgba(255, 255, 255, 0.2); /* Opacidade MAIS ALTA para visibilidade */
             border-radius: 50%;
             animation: twinkle 10s infinite alternate; 
         }
 
-        /* Posicionamento mais sutil para as estrelas */
-        .star:nth-child(1) { width: 1px; height: 1px; top: 15%; left: 10%; animation-delay: 0s; }
-        .star:nth-child(2) { width: 1px; height: 1px; top: 40%; left: 80%; animation-delay: 2s; }
-        .star:nth-child(3) { width: 2px; height: 2px; top: 60%; left: 30%; animation-delay: 4s; }
-        .star:nth-child(4) { width: 1px; height: 1px; top: 85%; left: 65%; animation-delay: 6s; }
-        .star:nth-child(5) { width: 2px; height: 2px; top: 25%; left: 50%; animation-delay: 8s; }
-        .star:nth-child(6) { width: 1px; height: 1px; top: 75%; left: 5%; animation-delay: 10s; }
-        .star:nth-child(7) { width: 1px; height: 1px; top: 35%; left: 90%; animation-delay: 12s; }
+        /* Posicionamento e tamanho das estrelas (agora mais presentes) */
+        .star:nth-child(1) { width: 2px; height: 2px; top: 15%; left: 10%; animation-delay: 0s; }
+        .star:nth-child(2) { width: 3px; height: 3px; top: 40%; left: 80%; animation-delay: 2s; }
+        .star:nth-child(3) { width: 4px; height: 4px; top: 60%; left: 30%; animation-delay: 4s; }
+        .star:nth-child(4) { width: 2px; height: 2px; top: 85%; left: 65%; animation-delay: 6s; }
+        .star:nth-child(5) { width: 3px; height: 3px; top: 25%; left: 50%; animation-delay: 8s; }
+        .star:nth-child(6) { width: 2px; height: 2px; top: 75%; left: 5%; animation-delay: 10s; }
+        .star:nth-child(7) { width: 3px; height: 3px; top: 35%; left: 90%; animation-delay: 12s; }
 
         @keyframes twinkle {
-            0% { opacity: 0.05; }
-            50% { opacity: 0.3; }
-            100% { opacity: 0.05; }
+            0% { opacity: 0.2; }
+            50% { opacity: 0.6; } /* Brilho máximo notável */
+            100% { opacity: 0.2; }
         }
 
-        /* Estilo do cabeçalho (AJUSTE: Mais espaço abaixo) */
+        /* Estilo do cabeçalho */
         header {
             text-align: center;
-            padding: 100px 20px 150px; /* Mais padding no final */
+            padding: 100px 20px 150px; 
             position: relative;
             z-index: 1; 
         }
@@ -78,16 +78,16 @@
         .section-title::after { 
             content: '';
             display: block;
-            width: 50px; 
-            height: 2px;
+            width: 70px; /* TRAÇO INICIAL MAIS LARGO */
+            height: 3px; /* TRAÇO MAIS GROSSO */
             background-color: #fff;
             margin: 10px auto 0;
-            transition: width 0.3s ease-in-out; /* Transição só na largura (expansão) */
+            transition: width 0.3s ease-in-out; 
         }
 
-        /* ANIMAÇÃO DO TRAÇO: Só expande na horizontal */
+        /* ANIMAÇÃO DO TRAÇO: Expande MUITO mais no hover */
         .section-title:hover::after {
-            width: 150px;
+            width: 200px; 
         }
 
         /* Container para os cards dos celulares */
@@ -113,7 +113,7 @@
         .phone-mockup {
             width: 100px;
             height: 180px;
-            border: 5px solid #ccc; /* CORRIGIDO: Bordas todas cinzas (#ccc) */
+            border: 5px solid #ccc; /* Bordas Cinzas (Mantido) */
             border-radius: 15px;
             margin: 10px auto 20px;
             display: flex;
@@ -133,7 +133,7 @@
         }
 
         .phone-mockup h4 {
-            font-family: 'Times New Roman', serif; /* Fonte diferente para o relógio */
+            font-family: 'Times New Roman', serif; 
             font-size: 1.5em;
             font-weight: 400;
             color: #fff;
