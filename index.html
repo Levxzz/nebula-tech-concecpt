@@ -14,7 +14,7 @@
             overflow-x: hidden;
         }
 
-        /* Estrelas no Fundo (CSS puro) */
+        /* Estrelas no Fundo (REVISADO: Menos poluído e mais sutil) */
         .stars {
             position: fixed;
             top: 0;
@@ -26,27 +26,30 @@
         }
         .star {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.1); 
+            background-color: rgba(255, 255, 255, 0.08); /* Opacidade BEM baixa */
             border-radius: 50%;
             animation: twinkle 10s infinite alternate; 
         }
 
-        .star:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 20%; animation-delay: 0s; }
-        .star:nth-child(2) { width: 1px; height: 1px; top: 50%; left: 70%; animation-delay: 2s; }
-        .star:nth-child(3) { width: 3px; height: 3px; top: 80%; left: 40%; animation-delay: 4s; }
-        .star:nth-child(4) { width: 2px; height: 2px; top: 30%; left: 85%; animation-delay: 6s; }
-        .star:nth-child(5) { width: 1px; height: 1px; top: 65%; left: 15%; animation-delay: 8s; }
+        /* Posicionamento mais sutil para as estrelas */
+        .star:nth-child(1) { width: 1px; height: 1px; top: 15%; left: 10%; animation-delay: 0s; }
+        .star:nth-child(2) { width: 1px; height: 1px; top: 40%; left: 80%; animation-delay: 2s; }
+        .star:nth-child(3) { width: 2px; height: 2px; top: 60%; left: 30%; animation-delay: 4s; }
+        .star:nth-child(4) { width: 1px; height: 1px; top: 85%; left: 65%; animation-delay: 6s; }
+        .star:nth-child(5) { width: 2px; height: 2px; top: 25%; left: 50%; animation-delay: 8s; }
+        .star:nth-child(6) { width: 1px; height: 1px; top: 75%; left: 5%; animation-delay: 10s; }
+        .star:nth-child(7) { width: 1px; height: 1px; top: 35%; left: 90%; animation-delay: 12s; }
 
         @keyframes twinkle {
-            0% { opacity: 0.1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 0.1; }
+            0% { opacity: 0.05; }
+            50% { opacity: 0.3; }
+            100% { opacity: 0.05; }
         }
 
-        /* Estilo do cabeçalho */
+        /* Estilo do cabeçalho (AJUSTE: Mais espaço abaixo) */
         header {
             text-align: center;
-            padding: 100px 20px 50px; 
+            padding: 100px 20px 150px; /* Mais padding no final */
             position: relative;
             z-index: 1; 
         }
@@ -58,8 +61,8 @@
         }
         .slogan {
             font-size: 1.2em;
-            font-weight: 400; /* Mais leve */
-            color: #ccc; /* Tom mais claro */
+            font-weight: 400;
+            color: #ccc;
             margin-top: 10px;
         }
 
@@ -79,10 +82,10 @@
             height: 2px;
             background-color: #fff;
             margin: 10px auto 0;
-            transition: all 0.5s ease-in-out; 
+            transition: width 0.3s ease-in-out; /* Transição só na largura (expansão) */
         }
 
-        /* ANIMAÇÃO DO TRAÇO: Desce e se expande ao passar o mouse */
+        /* ANIMAÇÃO DO TRAÇO: Só expande na horizontal */
         .section-title:hover::after {
             width: 150px;
         }
@@ -110,7 +113,7 @@
         .phone-mockup {
             width: 100px;
             height: 180px;
-            border: 5px solid #fff; 
+            border: 5px solid #ccc; /* CORRIGIDO: Bordas todas cinzas (#ccc) */
             border-radius: 15px;
             margin: 10px auto 20px;
             display: flex;
@@ -127,6 +130,13 @@
             height: 8px;
             border-radius: 50%;
             background-color: #444;
+        }
+
+        .phone-mockup h4 {
+            font-family: 'Times New Roman', serif; /* Fonte diferente para o relógio */
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #fff;
         }
 
         .phone-card h3 {
@@ -147,6 +157,8 @@
         <div class="star"></div>
         <div class="star"></div>
         <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
     </div>
 
     <header>
@@ -161,25 +173,25 @@
     <div class="phone-cards-container">
         
         <div class="phone-card">
-            <div class="phone-mockup"></div>
+            <div class="phone-mockup"><h4>12:00</h4></div> 
             <h3>Nebula Ultra Elite 0x</h3>
             <p>R$ 4.999,00</p>
         </div>
         
         <div class="phone-card">
-            <div class="phone-mockup" style="border-color: #ccc;"></div>
+            <div class="phone-mockup"><h4>12:00</h4></div>
             <h3>Nebula Note 0x</h3>
             <p>R$ 3.999,00</p>
         </div>
         
         <div class="phone-card">
-            <div class="phone-mockup"></div>
+            <div class="phone-mockup"><h4>12:00</h4></div>
             <h3>Nebula Horizon 0x</h3>
             <p>R$ 2.999,00</p>
         </div>
         
         <div class="phone-card">
-            <div class="phone-mockup" style="border-color: #ff00ff;"></div>
+            <div class="phone-mockup"><h4>12:00</h4></div>
             <h3>Nebula Dev Phone 0x</h3>
             <p>R$ 1.999,00</p>
         </div>
