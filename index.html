@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
             overflow-x: hidden;
         }
 
-        /* Estrelas no Fundo (REVISADO: MAIS VISÍVEL) */
+        /* Estrelas no Fundo */
         .stars {
             position: fixed;
             top: 0;
@@ -26,12 +26,12 @@
         }
         .star {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.2); /* Opacidade MAIS ALTA para visibilidade */
+            background-color: rgba(255, 255, 255, 0.2); 
             border-radius: 50%;
             animation: twinkle 10s infinite alternate; 
         }
 
-        /* Posicionamento e tamanho das estrelas (agora mais presentes) */
+        /* Posicionamento e tamanho das estrelas */
         .star:nth-child(1) { width: 2px; height: 2px; top: 15%; left: 10%; animation-delay: 0s; }
         .star:nth-child(2) { width: 3px; height: 3px; top: 40%; left: 80%; animation-delay: 2s; }
         .star:nth-child(3) { width: 4px; height: 4px; top: 60%; left: 30%; animation-delay: 4s; }
@@ -42,7 +42,7 @@
 
         @keyframes twinkle {
             0% { opacity: 0.2; }
-            50% { opacity: 0.6; } /* Brilho máximo notável */
+            50% { opacity: 0.6; } 
             100% { opacity: 0.2; }
         }
 
@@ -78,8 +78,8 @@
         .section-title::after { 
             content: '';
             display: block;
-            width: 70px; /* TRAÇO INICIAL MAIS LARGO */
-            height: 3px; /* TRAÇO MAIS GROSSO */
+            width: 70px; 
+            height: 3px; 
             background-color: #fff;
             margin: 10px auto 0;
             transition: width 0.3s ease-in-out; 
@@ -106,16 +106,16 @@
             border-radius: 10px;
             padding: 20px;
             text-align: center;
-            width: 200px; 
+            width: 250px; /* Aumentado para caber a descrição */
         }
 
         /* O Mockup (A Borda do Celular) */
         .phone-mockup {
             width: 100px;
             height: 180px;
-            border: 5px solid #ccc; /* Bordas Cinzas (Mantido) */
+            border: 5px solid #ccc; 
             border-radius: 15px;
-            margin: 10px auto 20px;
+            margin: 10px auto 10px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -131,8 +131,7 @@
             border-radius: 50%;
             background-color: #444;
         }
-
-        .phone-mockup h4 {
+        .real-time-clock {
             font-family: 'Times New Roman', serif; 
             font-size: 1.5em;
             font-weight: 400;
@@ -140,12 +139,23 @@
         }
 
         .phone-card h3 {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 5px;
         }
+        
+        .spec-description {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 5px;
+            height: 40px; /* Altura fixa para descrições */
+            line-height: 1.2;
+        }
+
         .phone-card p {
-            font-size: 0.9em;
-            color: #ccc;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 10px;
         }
 
     </style>
@@ -173,29 +183,58 @@
     <div class="phone-cards-container">
         
         <div class="phone-card">
-            <div class="phone-mockup"><h4>12:00</h4></div> 
+            <div class="phone-mockup"><h4 class="real-time-clock">12:00</h4></div> 
             <h3>Nebula Ultra Elite 0x</h3>
-            <p>R$ 2.930,00</p>
+            <p>$4,900</p>
+            <div class="spec-description">
+                Magnificence of structured technology. Blending elegance, practicality, and absolute power. (Nebula QX Ultra-Core 16GB)
+            </div>
         </div>
         
         <div class="phone-card">
-            <div class="phone-mockup"><h4>12:00</h4></div>
-            <h3>Nebula Note 0x</h3>
-            <p>R$ 1.650,00</p>
+            <div class="phone-mockup"><h4 class="real-time-clock">12:00</h4></div>
+            <h3>Nebula Dev Phone 0x</h3>
+            <p>$3,900</p>
+            <div class="spec-description">
+                For those who enjoy standing out. Personalize and create your own world, with no barriers, no limits. (Nebula D-Series 14GB)
+            </div>
         </div>
         
         <div class="phone-card">
-            <div class="phone-mockup"><h4>12:00</h4></div>
+            <div class="phone-mockup"><h4 class="real-time-clock">12:00</h4></div>
             <h3>Nebula Horizon 0x</h3>
-            <p>R$ 1.850,00</p>
+            <p>$1,700</p>
+            <div class="spec-description">
+                Exceed your own expectations, raise the bar, and be surprised by its beauty and harmony. (Nebula H-Flow 10GB)
+            </div>
         </div>
         
         <div class="phone-card">
-            <div class="phone-mockup"><h4>12:00</h4></div>
-            <h3>Nebula Dev Phone 0x Elite </h3>
-            <p>R$ 2.999,00</p>
+            <div class="phone-mockup"><h4 class="real-time-clock">12:00</h4></div>
+            <h3>Nebula Note 0x</h3>
+            <p>$1,500</p>
+            <div class="spec-description">
+                The simplicity of leisure, the pleasure of comfort, and performance in excellence. (Nebula N-Core 8GB)
+            </div>
         </div>
     </div>
 
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}`;
+
+            const clocks = document.querySelectorAll('.real-time-clock');
+
+            clocks.forEach(clock => {
+                clock.textContent = timeString;
+            });
+        }
+
+        updateClock();
+        setInterval(updateClock, 60000); 
+    </script>
 </body>
 </html>
