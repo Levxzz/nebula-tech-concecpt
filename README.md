@@ -1,2 +1,2 @@
 # nebula-tech-concecpt
-Página de vendas fictícia da NEBULA focada em Smartphones.
+Página de vendas fictícia da NEBULA focada em Smartphones. (Feito com IA)
